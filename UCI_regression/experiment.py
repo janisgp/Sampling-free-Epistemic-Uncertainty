@@ -23,7 +23,6 @@ parser.add_argument('--hidden', '-nh', default=2, type=int, help='Number of hidd
 parser.add_argument('--full_cov', '-fc', default=0, type=int, help='Use full covariance for uncertainty propagation')
 parser.add_argument('--full_cov_drop', '-fcd', default=0, type=int, help='Use full covariance for dropout rate learning')
 parser.add_argument('--per_activation_rate', '-par', default=0, type=int, help='Use one dropout rate per activation')
-parser.add_argument('--exact_act', '-ea', default=0, type=int, help='Use exact gaussian approximation')
 parser.add_argument('--gpu', '-g', default='0', type=str, help='GPU used during training')
 parser.add_argument('--dropout', '-do', default='0', type=int, help='Use monte-carlo dropout')
 parser.add_argument('--mdn', '-m', default='0', type=int, help='Use mixture density network')
