@@ -2,7 +2,7 @@
 
 ## Background
 
-We compare the predictive performance of our approach with MC dropout. The code of the experiment is based on the experiment in [Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning](https://arxiv.org/abs/1506.02142) and the original code can be found [here](https://github.com/yaringal/DropoutUncertaintyExps). 
+We compare the predictive performance of our approach with MC dropout. The code of the experiment is based on the experiment in [Dropout as a Bayesian Approximation: Representing Model Uncertainty in Deep Learning](https://arxiv.org/abs/1506.02142) and the original code can be found [here](https://github.com/yaringal/DropoutUncertaintyExps). The main goal of this experiment is to show quantitatively that our approximation delivers good results.
 
 We follow the original setup. We split the training data 20 times randomly into training and validation set, except for the dataset Protein Structure where we use five splits, and perform a separate grid search for the hyperparameters dropout rate and tau. Following the original work we use one hidden layer with 50 hidden units, except for Protein Structure where we use 100 hidden units. Dropout is applied directly to the input and after the hidden layer and we train the network for 400 epochs. We use the full covariance matrix to propagate uncertainty.
 
