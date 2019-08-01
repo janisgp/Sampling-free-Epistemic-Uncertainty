@@ -26,7 +26,6 @@ parser.add_argument('--per_activation_rate', '-par', default=0, type=int, help='
 parser.add_argument('--gpu', '-g', default='0', type=str, help='GPU used during training')
 parser.add_argument('--dropout', '-do', default='0', type=int, help='Use monte-carlo dropout')
 parser.add_argument('--mdn', '-m', default='0', type=int, help='Use mixture density network')
-parser.add_argument('--analytic_tll', '-al', default='0', type=int, help='Use analytic test log-likelihood')
 parser.add_argument('--learn_dropout', '-ld', default='0', type=int, help='Learn Dropout Rate')
 parser.add_argument('--debug', '-db', default='0', type=int, help='Debug mode')
 parser.add_argument('--learning_rate', '-lr', default='0.001', type=float, help='Learning rate')
