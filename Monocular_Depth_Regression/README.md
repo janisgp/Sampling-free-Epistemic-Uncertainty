@@ -12,5 +12,5 @@ Our dropout-extended version simply places a dropout (p=0.1) prior to the last c
 ```shell
 wget -i utils/kitti_archives_to_download.txt -P ~/my/output/folder/
 ```
-- Train a dropout-extended network following the instruction of the [repository of the original work](https://github.com/mrharicot/monodepth). When running the trainings/test script **add the additional argument --use_dropout 1**.
+- Train a dropout-extended network following the instruction of the [repository of the original work](https://github.com/mrharicot/monodepth). When running the trainings/test script **add the additional argument --use_dropout 1**. Alternatively checkpoints of a pretrained model may be downloaded from [here](https://drive.google.com/open?id=1Z-j9NM2UFqPW4etuOcjoyDIQBVaSk1qH)
 - For uncertainty evaluation follow the notebook **eval_uncertainty.ipynb** 
