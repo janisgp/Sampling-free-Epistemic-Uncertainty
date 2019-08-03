@@ -11,6 +11,6 @@ The original images in CamVid have resolution 720x960 and 32 classes. Following 
 
 ## How to use the code?
 
-We recommend creating a separate environment and installing **requirements.txt**. One can download a **pretrained Bayesian SegNet** by running script **models/get_pretrained_model.sh**.
+We recommend creating a separate environment and installing **requirements.txt**. One can download a **pretrained Bayesian SegNet** models with dropout after the four central blocks or only prior to the final layer from [here](https://drive.google.com/open?id=1XMwyWib9aO8dqZFVWkZLvfz9DuqS2LVp).
 
 Subsequently one can simply follow the notebook **SegNet-CamVid11-Bayesian.ipynb**. This will ultimately create a calibration plot in our work and qualitative examples for MC dropout and our approximation.
