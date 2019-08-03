@@ -1,8 +1,16 @@
-# Sampling-free Epistemic Uncertainty Estimation Using Approximated Variance Propagation
+# Uncertainty Estimation for Unsupervised Monocular Depth Regression on KITTI
 
-This repository provides the code for the ICCV'19 publication ["Sampling-free Epistemic Uncertainty Estimation Using Approximated Variance Propagation"](www.google.de) LINK!!!.  We provide a sampling-free approach for estimating epistemic uncertainty when applying methods based on noise injection (e.g. stochastic regularization). Our approach is motivated by error propagation. We primarily compare our approach with [Monte-Carlo (MC) dropout](https://arxiv.org/abs/1703.02914) by approximating the sampling procdeure of the latter. 
+## General Background
 
-Following the experiment section in our paper, this repository is divided into three sections:
-- **UCI_regression**: Comparison of predictive performance between MC dropout and our variance propagation approach. The code further implements [Mixture Density Networks](https://publications.aston.ac.uk/id/eprint/373/1/NCRG_94_004.pdf) and learning the dropout parameter using our sampling-free approximation, which is not included in our publication. 
-- **Bayesian_SegNet**: Sampling-free approximation of [Bayesian SegNet](https://arxiv.org/abs/1511.02680). We investigate the quality of our approximation on a high-dimensional semantic segmentation task. 
-- **Monocular_Depth_Regression**: Applies our approximation to [Unsupervised Monocular Depth Regression](https://arxiv.org/abs/1609.03677). We enhance the original work by inserting dropout at the final layers and analyze the quality of our approximation. 
+We apply to a dropout-extended version of [Unsupervised Monocular Depth Regression](https://arxiv.org/abs/1609.03677). This code is based on the [code of the original work](https://github.com/mrharicot/monodepth). Our approximation results are expected to be better, due to the absence of a softmax activation. 
+
+Our dropout-extended version simply places a dropout (p=0.1) prior to the last convolutional layer.
+
+## How to use this code?
+
+- Download KITTI if necessary by invoking
+```shell
+wget -i utils/kitti_archives_to_download.txt -P ~/my/output/folder/
+```
+- Train a dropout-extended network following the instruction of the [repository of the original work](https://github.com/mrharicot/monodepth). When running the trainings/test script **add the additional argument --use_dropout 1**.
+- For uncertainty evaluation follow the notebook **eval_uncertainty.ipynb** 
