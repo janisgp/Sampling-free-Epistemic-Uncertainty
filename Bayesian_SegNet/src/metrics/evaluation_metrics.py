@@ -96,7 +96,7 @@ def metrics(confusion: np.ndarray, mask: np.ndarray) -> tuple:
     # take the mean of the per class I/Us
     mean_iou = _iou.mean()
 
-    return _accuracy, mean_per_class_accuracy, mean_iou, _iou
+    return _accuracy, mean_per_class_accuracy, _class_accuracy, mean_iou, _iou
 
 
 # explicitly define the outward facing API of this module
