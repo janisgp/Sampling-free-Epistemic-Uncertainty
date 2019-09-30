@@ -8,13 +8,13 @@ We follow the original setup. We split the training data 20 times randomly into 
 
 The TLL in the original experiment requires sampling from distributions of outputs. Since our method naturally just returns the parameters of a unimodal distribution over the outputs, we assume a Gaussian distribution and sample from it to compute the TLL. According to [Fast Dropout](https://nlp.stanford.edu/pubs/sidaw13fast.pdf) this is a reasonable assumption given our hidden layer dimension. We perform the same grid search as for MC dropout. For both, MC dropout and our proposed approximation, we sample 10000 predictions to compute the TLL.
 
-This code checks the performance of four distinct approaches: MC dropout, our sampling-free approximation, Mixture Density Networks and learning the dropout rate using our approach. The first two and part of our publication. 
+This code checks the performance of four distinct approaches: MC dropout, our sampling-free approximation, Mixture Density Networks and learning the dropout rate using our approach. The first two are part of our publication. 
 
 The results can be found in our [work](https://arxiv.org/abs/1908.00598)
 
 ## How to use the code?
 
-We describe the essential components of this code. We **keras** for our implementation. 
+We describe the essential components of this code. We use **keras** with **tensorflow** for our implementation. 
 
 ### net
 
