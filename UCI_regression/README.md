@@ -10,7 +10,7 @@ The TLL in the original experiment requires sampling from distributions of outpu
 
 This code checks the performance of four distinct approaches: MC dropout, our sampling-free approximation, Mixture Density Networks and learning the dropout rate using our approach. The first two and part of our publication. 
 
-The results can be found in our work(LINK!!!)
+The results can be found in our work(https://arxiv.org/abs/1908.00598)
 
 ## How to use the code?
 
