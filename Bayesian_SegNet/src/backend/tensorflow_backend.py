@@ -18,7 +18,7 @@ def confusion_matrix(y_true, y_pred, num_classes=None):
         a confusion matrix computed based on y_true and y_pred
 
     """
-    return tf.confusion_matrix(y_true, y_pred, num_classes=num_classes)
+    return tf.math.confusion_matrix(y_true, y_pred, num_classes=num_classes)
 
 
 def pool2d_argmax(x: 'Tensor', pool_size: tuple,
@@ -90,7 +90,7 @@ def unpool2d_argmax(x: 'Tensor', idx: 'Tensor', pool_size: tuple) -> 'Tuple':
     batch_range = K.arange(K.cast(ins[0], 'int64'))
     batch_range = K.reshape(batch_range, shape=[ins[0], 1, 1, 1])
     # create a ones tensor in the shape of index
-    batch_idx = K.ones_like(idx) * batch_range
+    batch_idx = K.cast(K.ones_like(idx), 'int64') * batch_range
     batch_idx = K.reshape(batch_idx, (-1, 1))
     # create a complete index
     index = K.reshape(idx, (-1, 1))
