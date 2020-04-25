@@ -1,4 +1,6 @@
 import tensorflow as tf
+if tf.__version__[0] == '2':
+    tf = tf.compat.v1
 import keras.backend as K
 from keras.backend.tensorflow_backend import _preprocess_conv2d_input
 from keras.backend.tensorflow_backend import _preprocess_padding

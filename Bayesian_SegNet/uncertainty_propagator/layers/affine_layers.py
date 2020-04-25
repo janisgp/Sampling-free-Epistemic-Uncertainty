@@ -1,4 +1,6 @@
 import tensorflow as tf
+if tf.__version__[0] == '2':
+    tf = tf.compat.v1
 from keras.layers import Layer
 from ..layers.layers import VarPropagationLayer
 
