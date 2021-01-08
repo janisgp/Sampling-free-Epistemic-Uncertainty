@@ -77,6 +77,23 @@ class UncertaintyPropagator():
             return self.mc_prediction(X)
         else:
             return self.approx_prediction(X)
+        
+    def predict_samples(self, X):
+        f = K.function([self.model.layers[0].input, K.learning_phase()],
+           [self.model.layers[-1].output])
+        n = 1
+        predictions = None
+        mean_entropy = None
+        for i in range(self.mc_samples):
+            preds = f((X, 1))[0]
+            if predictions is None:
+                predictions = preds
+                mean_entropy = -1*(preds*np.log(preds)).sum(-1)
+            else:
+                predictions = (n*predictions + preds)/(n+1)
+                mean_entropy = (n*mean_entropy - (preds*np.log(preds)).sum(-1))/(n+1)
+            n += 1
+        return predictions, mean_entropy
 
     def set_mc_mode(self, mc_mode: bool):
         self._mc_mode = mc_mode
